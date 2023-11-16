@@ -1,52 +1,37 @@
-import { useEffect } from 'react';
+import { Canvas } from "@react-three/fiber";
+import Cube from "./components/Cube";
+import Model from "./components/Mode";
+import { Shiba } from "./components/Shiba"
+import { Male } from "./components/Male";
+import { OrbitControls } from "@react-three/drei";
 
-import * as THREE from 'three';
-// import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
-// import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
-// import { VOXLoader } from 'three/examples/jsm/loaders/VOXLoader';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import "./App.css";
 
-import SceneInit from './lib/SceneInit';
-
-function App() {
-  useEffect(() => {
-    const test = new SceneInit('myThreeJsCanvas');
-    test.initialize();
-    test.animate();
-
-    // const boxGeometry = new THREE.BoxGeometry(8, 8, 8);
-    // const boxMaterial = new THREE.MeshNormalMaterial();
-    // const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
-    // test.scene.add(boxMesh);
-
-    let loadedModel;
-    const glftLoader = new GLTFLoader();
-    glftLoader.load('./cusion.gltf', (gltfScene) => {
-      loadedModel = gltfScene;
-      // console.log(loadedModel);
-
-      gltfScene.scene.rotation.y = Math.PI / 8;
-      gltfScene.scene.position.y = 3;
-      //gltfScene.scene.scale.set(10, 10, 10);
-      test.scene.add(gltfScene.scene);
-    });
-
-    const animate = () => {
-      if (loadedModel) {
-        loadedModel.scene.rotation.x += 0.01;
-        loadedModel.scene.rotation.y += 0.01;
-        loadedModel.scene.rotation.z += 0.01;
-      }
-      requestAnimationFrame(animate);
-    };
-    //animate();
-  }, []);
-
+export default function App() {
   return (
-    <div>
-      <canvas id="myThreeJsCanvas" />
+    <div className="app">
+      <div className="navbar">
+        <h2>Controls</h2>
+        <ul>
+          <li>Position</li>
+          <li>Scale</li>
+          <li>Rotation</li>
+          <li>Upload Pattern from JSON</li>
+        </ul>
+      </div>
+      <div className="canvas">
+        <Canvas>
+          {/* <directionalLight position={[0, 0, 2]}/> */}
+          <ambientLight intensity={0.5} />
+          {/* <Cube position={[1, 0, 0]} size={[1, 1, 1]} color={"red"}/>
+          <Cube position={[-1, 0, 0]} size={[1, 1, 1]} color={"orange"}/>
+          <Cube position={[1, 2, 0]} size={[1, 1, 1]} color={"blue"}/>
+          <Cube position={[-1, 2, 0]} size={[1, 1, 1]} color={"yellow"}/> */}
+          {/* <Cube position={[0, 0, 0]} size={[1, 1, 1]} color={"yellow"} /> */}
+          <Male />
+          <OrbitControls />
+        </Canvas>
+      </div>
     </div>
   );
 }
-
-export default App;
