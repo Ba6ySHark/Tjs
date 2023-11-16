@@ -1,0 +1,11 @@
+Model Information:
+* title:	Basic male model
+* source:	https://sketchfab.com/3d-models/basic-male-model-af32da689e234a26aaf2d267618cadc5
+* author:	ToxicSmoke (https://sketchfab.com/ToxicSmoke)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Basic male model" (https://sketchfab.com/3d-models/basic-male-model-af32da689e234a26aaf2d267618cadc5) by ToxicSmoke (https://sketchfab.com/ToxicSmoke) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
